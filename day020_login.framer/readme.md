@@ -1,10 +1,5 @@
 ![image](https://github.com/oskardu/framer100days/blob/master/day020_login.framer/showcase/1.gif)
 </br>
 </br>
-![image](https://github.com/oskardu/framer100days/blob/master/day020_login.framer/showcase/2.png)
-</br>
-</br>
-![image](https://github.com/oskardu/framer100days/blob/master/day020_login.framer/showcase/3.png)
-</br>
 </br>
 ![image](https://github.com/oskardu/framer100days/blob/master/day020_login.framer/showcase/4.png)
