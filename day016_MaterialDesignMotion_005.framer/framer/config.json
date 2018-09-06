@@ -1,0 +1,21 @@
+{
+  "orientation" : 0,
+  "updateDelay" : 0.3,
+  "designModeSelected" : 0,
+  "cachedDeviceHeight" : 0,
+  "contentScale" : 1,
+  "cachedDeviceWidth" : 0,
+  "deviceType" : "custom",
+  "sharedPrototype" : 0,
+  "projectId" : "9F930F42-9237-4566-A3B3-1EB5619D549B",
+  "deviceOrientation" : 0,
+  "selectedHand" : "",
+  "showBezel" : 0,
+  "foldedCodeRanges" : [
+    "{206, 1607}",
+    "{1814, 1234}",
+    "{3049, 213}",
+    "{3263, 609}"
+  ],
+  "deviceScale" : "fit"
+}
