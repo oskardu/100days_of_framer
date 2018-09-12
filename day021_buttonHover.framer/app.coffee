@@ -33,7 +33,7 @@ layer.states.stateA=
 	shadowBlur: 8
 	shadowColor: "rgba(0,0,0,.25)"
 	options: 
-		time:0.3
+		time:0.2
 		curve: Bezier.easeOut
 
 layer.states.stateB=
@@ -43,10 +43,8 @@ layer.states.stateB=
 	shadowBlur: 8
 	shadowColor: "rgba(0,0,0,.15)"
 	options: 
-		time:0.3
+		time:0.2
 		curve: Bezier.easeOut
-
-
 
 
 layer.onMouseOver ->
