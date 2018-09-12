@@ -30,7 +30,7 @@ layer.states.stateA=
 	y: 120
 	backgroundColor: "#0003B3"
 	shadowY: 4
-	shadowBlur: 8
+	shadowBlur: 16
 	shadowColor: "rgba(0,0,0,.25)"
 	options: 
 		time:0.2
