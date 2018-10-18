@@ -7,7 +7,7 @@ if (window.Framer) {window.Framer.Defaults.DeviceView = {"deviceScale":"fit","se
 }
 if (window.Framer) {window.Framer.Defaults.DeviceComponent = {"deviceScale":"fit","selectedHand":"","deviceType":"apple-iphone-8-space-gray","contentScale":1,"hideBezel":true,"orientation":0};
 }
-window.FramerStudioInfo = {"deviceImagesUrl":"\/_server\/resources\/DeviceImages","documentTitle":"day006 详情页图片随内容滚动缩放.framer"};
+window.FramerStudioInfo = {"deviceImagesUrl":"\/_server\/resources\/DeviceImages","documentTitle":"day006详情页图片随内容滚动缩放.framer"};
 
 Framer.Device = new Framer.DeviceView();
 Framer.Device.setupContext();

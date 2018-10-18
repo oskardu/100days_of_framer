@@ -57,7 +57,6 @@
             "name" : "header",
             "blendingMode" : "normal",
             "contrast" : 100,
-            "originalFilename" : "header.png",
             "centerAnchorY" : 0.0494752623688156,
             "height" : 66,
             "borderWidth" : 1,
@@ -144,7 +143,6 @@
             "name" : "footer",
             "blendingMode" : "normal",
             "contrast" : 100,
-            "originalFilename" : "footer.png",
             "centerAnchorY" : 0.9662668665667167,
             "height" : 45,
             "borderWidth" : 1,
@@ -241,7 +239,6 @@
                     "name" : null,
                     "blendingMode" : "normal",
                     "contrast" : 100,
-                    "originalFilename" : "8531535528115_.pic_hd副本.jpg",
                     "centerAnchorY" : 0.4990530303030303,
                     "height" : 531.2916666666667,
                     "borderWidth" : 1,
@@ -507,7 +504,6 @@
                     "name" : "page1",
                     "blendingMode" : "normal",
                     "contrast" : 100,
-                    "originalFilename" : "8401535512107_.pic_hd副本.png",
                     "centerAnchorY" : 0.4971590909090909,
                     "height" : 531,
                     "borderWidth" : 1,
@@ -2797,13 +2793,11 @@
                         "editable" : false,
                         "rotation" : 0,
                         "blurType" : "layer",
-                        "x" : 69,
+                        "__class" : "TextNode",
                         "id" : "neSGC3E28",
                         "saturateEnabled" : 0,
-                        "y" : 109,
                         "grayscale" : 0,
                         "hueRotateEnabled" : 0,
-                        "__class" : "TextNode",
                         "widthFactor" : null,
                         "opacity" : 1,
                         "contrastEnabled" : 0,
@@ -2827,29 +2821,29 @@
                               "depth" : 0,
                               "inlineStyleRanges" : [
                                 {
-                                  "length" : 4,
                                   "style" : "LETTERSPACING:0",
-                                  "offset" : 0
+                                  "offset" : 0,
+                                  "length" : 4
                                 },
                                 {
-                                  "length" : 4,
                                   "style" : "LINEHEIGHT:1.2",
-                                  "offset" : 0
+                                  "offset" : 0,
+                                  "length" : 4
                                 },
                                 {
-                                  "length" : 4,
                                   "style" : "FONT:ToppanBunkyuMidashiMinchoStdN-ExtraBold",
-                                  "offset" : 0
+                                  "offset" : 0,
+                                  "length" : 4
                                 },
                                 {
-                                  "length" : 4,
                                   "style" : "SIZE:21",
-                                  "offset" : 0
+                                  "offset" : 0,
+                                  "length" : 4
                                 },
                                 {
-                                  "length" : 4,
                                   "style" : "COLOR:hsl(0, 0%, 0%)",
-                                  "offset" : 0
+                                  "offset" : 0,
+                                  "length" : 4
                                 }
                               ],
                               "entityRanges" : [
@@ -2910,13 +2904,11 @@
                         "editable" : false,
                         "rotation" : 0,
                         "blurType" : "layer",
-                        "x" : 69,
+                        "__class" : "TextNode",
                         "id" : "yKHw9B891",
                         "saturateEnabled" : 0,
-                        "y" : 109,
                         "grayscale" : 0,
                         "hueRotateEnabled" : 0,
-                        "__class" : "TextNode",
                         "widthFactor" : null,
                         "opacity" : 1,
                         "contrastEnabled" : 0,
@@ -2940,29 +2932,29 @@
                               "depth" : 0,
                               "inlineStyleRanges" : [
                                 {
-                                  "length" : 10,
                                   "style" : "LETTERSPACING:0",
-                                  "offset" : 0
+                                  "offset" : 0,
+                                  "length" : 10
                                 },
                                 {
-                                  "length" : 10,
                                   "style" : "LINEHEIGHT:1.2",
-                                  "offset" : 0
+                                  "offset" : 0,
+                                  "length" : 10
                                 },
                                 {
-                                  "length" : 10,
                                   "style" : "FONT:SFProText-Medium",
-                                  "offset" : 0
+                                  "offset" : 0,
+                                  "length" : 10
                                 },
                                 {
-                                  "length" : 10,
                                   "style" : "SIZE:14",
-                                  "offset" : 0
+                                  "offset" : 0,
+                                  "length" : 10
                                 },
                                 {
-                                  "length" : 10,
                                   "style" : "COLOR:rgba(175, 175, 175, 1.00)",
-                                  "offset" : 0
+                                  "offset" : 0,
+                                  "length" : 10
                                 }
                               ],
                               "entityRanges" : [
@@ -3324,7 +3316,6 @@
                     "name" : "page3",
                     "blendingMode" : "normal",
                     "contrast" : 100,
-                    "originalFilename" : "8381535512106_.pic_hd副本.png",
                     "centerAnchorY" : 0.5018939393939394,
                     "height" : 532,
                     "borderWidth" : 1,
@@ -3590,7 +3581,6 @@
                     "name" : null,
                     "blendingMode" : "normal",
                     "contrast" : 100,
-                    "originalFilename" : "8421535512108_.pic_hd副本.png",
                     "centerAnchorY" : 0.5037878787878788,
                     "height" : 534,
                     "borderWidth" : 1,

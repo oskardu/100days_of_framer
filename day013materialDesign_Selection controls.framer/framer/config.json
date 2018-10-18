@@ -1,11 +1,12 @@
 {
   "orientation" : 0,
-  "updateDelay" : 0.3,
+  "updateDelay" : 0.29999999999999999,
   "designModeSelected" : 0,
-  "cachedDeviceHeight" : 0,
+  "cachedDeviceHeight" : 375,
   "contentScale" : 1,
-  "cachedDeviceWidth" : 0,
-  "deviceType" : "fullscreen",
+  "cachedDeviceWidth" : 500,
+  "fullScreen" : false,
+  "deviceType" : "custom",
   "sharedPrototype" : 0,
   "propertyPanelToggleStates" : {
 
@@ -15,8 +16,8 @@
   "selectedHand" : "",
   "showBezel" : 0,
   "foldedCodeRanges" : [
-    "{48, 1373}",
-    "{1422, 920}"
+    "{138, 1373}",
+    "{1512, 920}"
   ],
-  "deviceScale" : 1
+  "deviceScale" : "fit"
 }

@@ -3,8 +3,8 @@
 # Define and set custom device 
 Framer.Device.customize
 	deviceType: "fullscreen"
-	screenWidth: 1600
-	screenHeight: 1200
+	screenWidth: 1604
+	screenHeight: 1204
 
 # Aware-Move away
 frameA=frame1_1.frame
@@ -121,9 +121,6 @@ animation1=new Animation frame2_0,
 		time:0.23
 
 
-Utils.delay 1,->
-	animation1.start()
-
 
 
 for frame in [frame2_1,frame2_2,frame2_3,frame2_4,frame2_5,frame2_6,frame2_7,frame2_8,frame2_9]
@@ -132,7 +129,8 @@ for frame in [frame2_1,frame2_2,frame2_3,frame2_4,frame2_5,frame2_6,frame2_7,fra
 
 
 
-Utils.delay 1,->
+spreadBar.onClick ->
+	animation1.start()
 	frame2_1.animate
 		size:60
 		opacity: 1
@@ -140,63 +138,69 @@ Utils.delay 1,->
 			time: 0.15
 			curve: Bezier.easeOut
 
-Utils.delay 1.02,->
+
 	frame2_2.animate
 		size:60
 		opacity: 1
 		options: 
 			time:0.15
+			delay: 0.02
 			curve: Bezier.easeOut
 	frame2_4.animate
 		size:60
 		opacity: 1
 		options: 
 			time:0.15
+			delay: 0.02
 			curve: Bezier.easeOut
 
-
-Utils.delay 1.04,->
 	frame2_3.animate
 		size:60
 		opacity: 1
 		options: 
 			time:0.15
+			delay: 0.04
 			curve: Bezier.easeOut
 	frame2_5.animate
 		size:60
 		opacity: 1
 		options: 
 			time:0.15
+			delay: 0.04
 			curve: Bezier.easeOut
 	frame2_7.animate
 		size:60
 		opacity: 1
 		options: 
 			time:0.15
+			delay: 0.04
 			curve: Bezier.easeOut
 
 
-Utils.delay 1.06,->
+
 	frame2_6.animate
 		size:60
 		opacity: 1
 		options: 
 			time:0.15
+			delay: 0.06
 			curve: Bezier.easeOut
 	frame2_8.animate
 		size:60
 		opacity: 1
 		options: 
 			time:0.15
+			delay: 0.06
 			curve: Bezier.easeOut
 
 
-Utils.delay 1.08,->
+
 	frame2_9.animate
 		size:60
 		opacity: 1
 		options: 
 			time: 0.15
+			delay: 0.08
 			curve: Bezier.easeOut
 
 # Surface connection-creation

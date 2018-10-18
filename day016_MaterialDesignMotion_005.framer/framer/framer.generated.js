@@ -7,7 +7,7 @@ if (window.Framer) {window.Framer.Defaults.DeviceView = {"deviceScale":"fit","se
 }
 if (window.Framer) {window.Framer.Defaults.DeviceComponent = {"deviceScale":"fit","selectedHand":"","deviceType":"custom","contentScale":1,"hideBezel":true,"orientation":0};
 }
-window.FramerStudioInfo = {"deviceImagesUrl":"\/_server\/resources\/DeviceImages","documentTitle":"day016 Material Design Motion 005.framer"};
+window.FramerStudioInfo = {"deviceImagesUrl":"\/_server\/resources\/DeviceImages","documentTitle":"day016_MaterialDesignMotion_005.framer"};
 
 Framer.Device = new Framer.DeviceView();
 Framer.Device.setupContext();

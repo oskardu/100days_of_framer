@@ -1,5 +1,11 @@
 # Selection controls have a duration of 100ms.
 
+Framer.Device.customize
+	deviceType: "fullScreen"
+	screenWidth: 1000
+	screenHeight: 750
+
+
 # 选中1
 smallcircle.opacity=0
 bigcircle2.opacity=0

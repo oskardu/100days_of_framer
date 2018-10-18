@@ -1,5 +1,12 @@
 # 四个frame都要设置Clip，只显示frame内部的内容
 
+Framer.Device.customize
+	deviceType: "fullScreen"
+	screenWidth: 1600
+	screenHeight: 1200
+
+
+
 # All content element are shared
 content2.opacity=0
 
