@@ -452,6 +452,29 @@ listText1_2.onTap ->
 
 # 下载
 
+download_notification.scale=0.8
+animationDownload1=new Animation download_notification,
+	scale:1
+	opacity: 1
+	animationOptions=
+		time:0.3
+		curve:Spring(damping: 0.5)
+
+animationDownload2=new Animation download_notification,
+	opacity: 0
+	animationOptions=
+		delay:0.3
+		time:0.2
+		curve:Bezier.easeOut
+
+animationDownload1.onAnimationEnd ->
+	animationDownload2.start()
+
+animationDownload2.onAnimationEnd ->
+	download_notification.scale=0.8
+
+download_icon.onTap ->
+	animationDownload1.start()
 
 
 
