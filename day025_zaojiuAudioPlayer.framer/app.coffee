@@ -4,7 +4,7 @@
 # wechat:kcufuoyd
 
 
-# 设置画板颜色，全屏展示时会有白色背景
+# 设置画板颜色，全屏展示时会有白色背景（默认白色）
 Canvas.backgroundColor = "white"
 
 {Audio, Slider} = require "audio"
