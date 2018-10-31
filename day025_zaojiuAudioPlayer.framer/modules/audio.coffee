@@ -425,6 +425,8 @@ class exports.Audio extends Layer
 	@wrap = (layerA, layerB, options) ->
 		return wrapLayer(new @(options), layerA, layerB, options)
 
+	
+
 wrapLayer = (instance, layerA, layerB) ->
 
 	if not (layerA instanceof Layer)

@@ -3,6 +3,10 @@
 # github:https://github.com/oskardu
 # wechat:kcufuoyd
 
+
+# 设置画板颜色，全屏展示时会有白色背景
+Canvas.backgroundColor = "white"
+
 {Audio, Slider} = require "audio"
 audio = Audio.wrap(play_icon, pause_icon)
 audio.audio = "sounds/Ashtar%20Command%20-%20Deadman's%20Gun.mp3"
@@ -278,6 +282,36 @@ listContent2.parent=scrollList.content
 
 
 # 进度滑块
+slider2=new SliderComponent
+	width: 257
+	height: 4
+	x: 59
+	y: 581
+	borderRadius: 10
+	backgroundColor: "rgba(255,255,255,0.5)"
+	min: 0
+	max: 255
+	parent: bg
+	opacity: 0
+
+slider2.fill.backgroundColor="white"
+
+slider2.knob.width=20
+slider2.knob.height=20
+slider2.knob.shadowColor="rgba(0,0,0,0)"
+
+sliderCircle2=new Layer
+	parent: slider2.knob
+	size: 6
+	backgroundColor: "#AD2526"
+	borderRadius: 10
+
+sliderCircle2.center()
+
+audio2.showProgress slider2
+audio2.showTime text2
+
+
 slider=new SliderComponent
 	width: 257
 	height: 4
@@ -309,34 +343,7 @@ audio.showTime text
 
 
 
-slider2=new SliderComponent
-	width: 257
-	height: 4
-	x: 59
-	y: 581
-	borderRadius: 10
-	backgroundColor: "rgba(255,255,255,0.5)"
-	min: 0
-	max: 255
-	parent: bg
-	opacity: 0
 
-slider2.fill.backgroundColor="white"
-
-slider2.knob.width=20
-slider2.knob.height=20
-slider2.knob.shadowColor="rgba(0,0,0,0)"
-
-sliderCircle2=new Layer
-	parent: slider2.knob
-	size: 6
-	backgroundColor: "#AD2526"
-	borderRadius: 10
-
-sliderCircle2.center()
-
-audio2.showProgress slider2
-audio2.showTime text2
 
 
 
