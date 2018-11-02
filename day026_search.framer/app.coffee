@@ -68,7 +68,7 @@ animationD_2=animationD.reverse()
 
 
 scroll.onMove ->
-#	print scroll.scrollY
+# 	print scroll.scrollY
 	if scroll.scrollY>20
 		animationA.start()
 		animationB.start()
@@ -188,7 +188,13 @@ animationSearchCancel=new Animation search_cancel,
 
 animationSearchCancel2=animationSearchCancel.reverse()
 
+animationSearchCancel_2=new Animation search_cancel_2,
+	opacity:0
+	animationOptions=
+		time:searchFadeTime
+		curve:Bezier.easeOut
 
+animationSearchCancel_2_2=animationSearchCancel_2.reverse()
 
 # 最近搜索&热门搜索动效
 animationRecentSearch=new Animation recentSearch_hot,
@@ -243,11 +249,18 @@ search.onTap ->
 	recommendSearch01.opacity=0
 	recommendSearch02.opacity=0
 	recommendSearch03.opacity=0
-	te.opacity=0
-	si.opacity=0
-	la.opacity=0
+# 	te.opacity=0
+# 	si.opacity=0
+# 	la.opacity=0
+	search_cancel_2.ignoreEvents=true
+	search_cancel4.ignoreEvents=true
+	search4.ignoreEvents=true
 
 	scroll.sendToBack()
+
+
+
+
 
 
 # 点击「取消」按钮
@@ -258,6 +271,9 @@ search_cancel.onTap ->
 	animationFollowingExploreUser2.onAnimationEnd ->
 		search.opacity=1
 		search3.opacity=0
+# 	search_cursor.x=13
+
+	search_cancel_2.ignoreEvents=true
 
 	animationHotSearch2.start()
 	hotSearch.opacity=1
@@ -265,12 +281,22 @@ search_cancel.onTap ->
 	recommendSearch01.opacity=0
 	recommendSearch02.opacity=0
 	recommendSearch03.opacity=0
+	recommendSearch03_2.opacity=0
+	animationRecommendSearch03_2_2.start()
 	te.opacity=0
 	si.opacity=0
 	la.opacity=0
 
+
+
 	searchResults.sendToBack()
 
+	recentSearch_hot2.opacity=0
+
+	search.onTap ->
+		search_cursor.x=13
+
+# 	bottom.animate "show"
 
 # cursor闪烁动画
 animationSearch_cursor3=new Animation search_cursor,
@@ -328,30 +354,35 @@ animationHotSearch2.onAnimationEnd ->
 
 clear_icon.onTap ->
 	animationRecentSearch3.start()
-
+	recentSearch_hot2.opacity=0
 
 
 # 搜索过程中即时推荐搜索
 animationHotSearch.onAnimationEnd ->
 	Utils.delay 1, ->
 		te.opacity=1
-		animationSearch_cursor3.stop()
-		animationSearch_cursor4.stop()
-		search_cursor.opacity=0
+# 		animationSearch_cursor3.stop()
+# 		animationSearch_cursor4.stop()
+# 		search_cursor.opacity=0
 		search_text3_2.opacity=0
 		hotSearch.opacity=0
 		recommendSearch01.opacity=1
+		search_cursor.x=35
+
 
 	Utils.delay 1.2, ->
 		si.opacity=1
 		recommendSearch01.opacity=0
 		recommendSearch02.opacity=1
+		search_cursor.x=51
+
 
 	Utils.delay 1.4, ->
 		la.opacity=1
 		recommendSearch01.opacity=0
 		recommendSearch02.opacity=0
 		recommendSearch03.opacity=1
+		search_cursor.x=67
 
 
 
@@ -448,11 +479,28 @@ animationRecentSearch_hot2=animationRecentSearch_hot.reverse()
 animationRecommendSearch03=new Animation recommendSearch03,
 	x:-129
 	animationOptions=
-		time:0.2
-		curve:Bezier.easeIn
+		time:0.3
+		curve:Bezier.easeOut
 
-animationRecommendSearch03_2=animationRecommendSearch03.reverse()
+animationRecommendSearch03_2=new Animation recommendSearch03,
+	x:20
+	animationOptions=
+		time:0.3
+		curve:Bezier.easeOut
 
+
+# 搜索结果页再次进入输入搜索项，然后点击取消，此时再点击返回按钮时。搜索推荐内容进入画面
+animationRecommendSearch03_2_1=new Animation recommendSearch03_2,
+	x:20
+	animationOptions=
+		time:0.3
+		curve:Bezier.easeOut
+
+animationRecommendSearch03_2_2=new Animation recommendSearch03_2,
+	x:-129
+	animationOptions=
+		time:0.3
+		curve:Bezier.easeOut
 
 animationSearchBack=new Animation search_back,
 	opacity:1
@@ -476,67 +524,254 @@ animationSearch3_2.onAnimationStart ->
 	animationRecommendSearch03_2.start()
 
 
+# 搜索结果从上往下进入画面
 animationSearchResults=new Animation searchResults,
 	y:104
 	animationOptions=
 		time:0.2
 		curve:Bezier.easeOut
 
-
+# 搜索结果向右飞出去
 animationSearchResults2=new Animation searchResults,
 	x:375
 	opacity: 0
 	animationOptions=
-		time:0.2
+		time:0.3
 		curve:Bezier.easeOut
+
 
 
 searchResults.sendToBack()
 
+animationHotSearch.onAnimationEnd ->
+	Utils.delay 1.4, ->
+		search_button.onTap ->
+		# 	spinner.opacity=1
+		# 	animationCicle1.start()
+			spinner2.opacity=1
+			animationSpinner2.restart()
+			animationSearch3.start()
+			animationSearchCancel2.start()
+			animationKeyboard2.start()
+			bottom.animate "hide"
+			search_cursor.x=13
+			search_cursor.opacity=0
+			animationSearch_cursor3.stop()
+			animationSearch_cursor4.stop()
+		
+		
+			Utils.delay 1, ->
+				spinner2.opacity=0
+				searchResults.opacity=1
+				searchResults.x=16
+				searchResults.y=53
+				animationSearchResults.start()
+				for item in [rec1,rec2,rec3,rec4,rec5,rec6,rec7,rec8]
+					item.animate
+						opacity: 0
+						options: 
+							time: 0.4
+							curve: Bezier.easeOut
+				for item in [headPhoto1,headPhoto2,headPhoto3,headPhoto4,headPhoto5,headPhoto6,headPhoto7,headPhoto8,headPhoto9]
+					item.animate
+						opacity: 0
+						options: 
+							time: 0.1
+							curve: Bezier.easeOut
 
-search_button.onTap ->
-# 	spinner.opacity=1
-# 	animationCicle1.start()
-	spinner2.opacity=1
-	animationSpinner2.restart()
-	animationSearch3.start()
-	animationSearchCancel2.start()
-	animationKeyboard2.start()
-	bottom.animate "hide"
 
-	Utils.delay 1, ->
-		spinner2.opacity=0
-		searchResults.opacity=1
-		animationSearchResults.start()
-		for item in [rec1,rec2,rec3,rec4,rec5,rec6,rec7,rec8]
-			item.animate
-				opacity: 0
-				options: 
-					time: 0.4
-					curve: Bezier.easeOut
-		for item in [headPhoto1,headPhoto2,headPhoto3,headPhoto4,headPhoto5,headPhoto6,headPhoto7,headPhoto8]
-			item.animate
-				opacity: 0
-				options: 
-					time: 0.1
-					curve: Bezier.easeOut
-
-
-
+# 搜索结果返回页面
 search_back.onTap ->
 	spinner2.opacity=0
 	animationSearch3_2.start()
 	animationSearchCancel.start()
 	animationSearchResults2.start()
 	animationKeyboard.start()
+	animationSearch_cursor.start()
+	search_cursor.x=67
 
+	recommendSearch03_2.opacity=1
+	animationRecommendSearch03_2_1.start()
+
+	search_cancel_2.ignoreEvents=true
 
 
 scroll2=new ScrollComponent
 	width: searchResults.width
-	height: 665
+	height: 759-50
 	parent: searchResults
 	scrollHorizontal: false
 
 scroll2.sendToBack()
 results_content.parent=scroll2.content
+
+
+
+# 搜索结果出来之后再次点击搜索框
+animationSearchResults.onAnimationEnd ->
+	search.onTap ->
+		spinner2.opacity=0
+		animationSearch3_2.start()
+		animationSearchCancel.start()
+		animationKeyboard.start()
+		animationSearch_cursor.start()
+		search_cursor.x=67
+
+
+		search_cancel_2.ignoreEvents=false
+
+
+		searchResults.animate
+			opacity: 0
+			options: 
+				time: 0.2
+				curve: Bezier.easeOut
+
+		recentSearch_hot2.animate
+			opacity: 1
+			options: 
+				time: 0.3
+				curve: Bezier.easeOut
+
+
+	search_cancel_2.onTap ->
+		spinner2.opacity=0
+		animationSearch3.start()
+		animationSearchCancel2.start()
+		animationSearchCancel_2_2.start()
+		animationKeyboard2.start()
+		animationSearch_cursor3.stop()
+		animationSearch_cursor4.stop()
+		search_cursor.opacity=0
+# 		search_cursor.x=67
+
+		search_cancel_2.ignoreEvents=true
+
+		searchResults.animate
+			opacity: 1
+			options: 
+				time: 0.2
+				curve: Bezier.easeOut
+
+		recentSearch_hot2.animate
+			opacity: 0
+			options: 
+				time: 0.1
+				curve: Bezier.easeOut
+
+
+
+
+# 点击圆形搜索
+animationSearch4_1=new Animation search4,
+	width:297
+	x: 20
+	animationOptions=
+		time:0.2
+		curve:Bezier.easeOut
+
+animationSearch4_2=new Animation search4,
+	width:40
+	x: 315
+	animationOptions=
+		time:0.2
+		curve:Bezier.easeOut
+
+animationSearcIcon4_1=new Animation search_icon4,
+	opacity:0
+	animationOptions=
+		time:searchFadeTime
+		curve:Bezier.easeOut
+
+animationSearcIcon4_2=animationSearcIcon4_1.reverse()
+
+
+animationSearchText4_1=new Animation search_text4,
+	opacity:1
+	animationOptions=
+		time:searchFadeTime
+		curve:Bezier.easeOut
+
+animationSearchText4_2=animationSearchText4_1.reverse()
+
+
+animationSearchCancel4_1=new Animation search_cancel4,
+	opacity:1
+	animationOptions=
+		time:searchFadeTime
+		curve:Bezier.easeOut
+
+animationSearchCancel4_2=animationSearchCancel4_1.reverse()
+
+
+
+# cursor4闪烁动画
+animationSearch_cursor4_1=new Animation search_cursor4,
+	opacity:0
+	animationOptions=
+		time:0.2
+		delay:0.4
+		curve:Bezier.easeOut
+
+
+animationSearch_cursor4_2=new Animation search_cursor4,
+	opacity:1
+	animationOptions=
+		time:0.2
+		delay:0.4
+		curve:Bezier.easeOut
+
+
+animationSearch_cursor4_3=new Animation search_cursor4,
+	opacity:1
+	animationOptions=
+		time:searchFadeTime
+		curve:Bezier.easeOut
+
+animationSearch_cursor4_1.onAnimationEnd ->
+	animationSearch_cursor4_2.start()
+
+animationSearch_cursor4_2.onAnimationEnd ->
+	animationSearch_cursor4_1.start()
+
+animationSearch_cursor4_3.onAnimationEnd ->
+	animationSearch_cursor4_1.start()
+
+search4.onTap ->
+	animationSearch4_1.start()
+	animationSearcIcon4_1.start()
+	animationSearchText4_1.start()
+	animationSearch_cursor4_3.start()
+	animationSearchCancel4_1.start()
+	animationKeyboard.start()
+	animationFollowingExploreUser.start()
+
+	search_cancel4.ignoreEvents=false
+
+	search.opacity=0
+
+search_cancel4.onTap ->
+	animationSearch4_2.start()
+	animationSearcIcon4_2.start()
+	animationSearchText4_2.start()
+	animationSearchCancel4_2.start()
+	animationSearch_cursor4_1.stop()
+	animationSearch_cursor4_2.stop()
+	search_cursor4.opacity=0
+	animationKeyboard2.start()
+	animationFollowingExploreUser2.start()
+
+	search.opacity=1
+
+# 	bottom.animate "show"
+
+
+
+animationA.onAnimationEnd ->
+	search4.opacity=1
+
+
+animationA_2.onAnimationStart ->
+	search4.opacity=0
+
+
